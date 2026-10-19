@@ -1,5 +1,5 @@
 // FASE 3: URL base por variables de entorno para producción
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+const API_BASE_URL = 'https://agrocebada-1.onrender.com/api';
 
 const handleResponse = async (response: Response) => {
   if (!response.ok) {
