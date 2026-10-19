@@ -185,9 +185,9 @@ export const Parcels: React.FC = () => {
                     className={`cursor-pointer transition-all border-l-4 ${selectedParcelId === item.name ? 'bg-blue-50/80 border-blue-500' : 'hover:bg-gray-50/80 border-transparent'}`}
                   >
                     <td className="px-3 py-2.5">
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center gap-1 " title="Registro Manual sin Polígono">
                         <span className={`font-bold ${selectedParcelId === item.name ? 'text-blue-700' : 'text-gray-900'}`}>{item.name}</span>
-                        {!item.hasPolygon && <AlertTriangle size={12} className="text-amber-500" title="Registro Manual sin Polígono" />}
+                        {!item.hasPolygon && <AlertTriangle size={12} className="text-amber-500"  />}
                       </div>
                       <div className="text-[11px] text-gray-400 truncate max-w-[140px]">{item.municipality !== 'Sin dato' ? `${item.municipality}, ${item.state}` : item.state}</div>
                     </td>

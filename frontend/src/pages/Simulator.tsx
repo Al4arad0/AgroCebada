@@ -150,7 +150,7 @@ export const Simulator: React.FC = () => {
                   <CartesianGrid strokeDasharray="3 3" vertical={false} />
                   <XAxis dataKey="etapa" tick={{ fontSize: 11 }} />
                   <YAxis unit=" t/ha" domain={[0, 6]} />
-                  <Tooltip formatter={(value: number) => [`${value.toFixed(3)} t/ha`, 'Cálculo']} />
+                  <Tooltip formatter={(value: any) => [`${value.toFixed(3)} t/ha`, 'Cálculo']} />
                   <ReferenceLine y={BASE_GEO_PARAMS.medias_yield[selectedZone]} stroke="#94a3b8" strokeDasharray="3 3" />
                   <Bar dataKey="valor" fill="#3b82f6" radius={[4, 4, 0, 0]} />
                 </BarChart>
