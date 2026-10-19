@@ -21,11 +21,11 @@ function getCentroid(geometry: any): { lat: number; lng: number } {
 
 const seedDatabase = async () => {
   if (process.env.NODE_ENV === 'production') {
-    console.error("❌ ERROR: No se puede ejecutar seed en producción.");
+    console.error("ERROR: No se puede ejecutar seed en producción.");
     process.exit(1);
   }
 
-  console.log("🌱 Iniciando siembra corregida de AgroCebada...");
+  console.log("Iniciando siembra corregida de AgroCebada");
 
   const geojsonCandidates = [
     path.resolve(process.cwd(), '../frontend/public/parcelas.geojson'),
@@ -196,10 +196,10 @@ const seedDatabase = async () => {
       }
     });
 
-    console.log("✅ Siembra completada con éxito:");
+    console.log("Siembra completada con éxito:");
     process.exit(0);
   } catch (error) {
-    console.error("❌ Error en seed:", error);
+    console.error("Error en seed:", error);
     process.exit(1);
   }
 };

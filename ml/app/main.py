@@ -9,7 +9,6 @@ from pydantic import BaseModel, Field
 
 app = FastAPI(title="AgroCebada ML Engine V3")
 
-# CORS: Se configura desde variable de entorno o por defecto a bloqueado en prod
 allowed_origins_env = os.getenv("ALLOWED_ORIGINS", "*")
 allowed_origins = [origin.strip() for origin in allowed_origins_env.split(",")]
 
@@ -42,9 +41,9 @@ try:
         for k, v in geo_params.get('mapa_zonas', {}).items():
             normalized_zonas[normalize_id(k)] = str(v)
             
-    print("✅ Modelo V3 Espacial cargado correctamente.")
+    print("Modelo V3 Espacial cargado correctamente.")
 except Exception as e:
-    print(f"❌ Error crítico cargando el modelo: {e}")
+    print(f"Error crítico cargando el modelo: {e}")
 
 # 3. Validación estricta con Pydantic
 class PredictRequest(BaseModel):

@@ -1,5 +1,3 @@
-// frontend/src/mocks/timeSeriesMock.ts
-
 export const mockTimeSeriesData = [
   { date: '2025-04-01', ndvi: 0.15, evi: 0.10, precip: 15, tmax: 28, tmin: 12 },
   { date: '2025-05-01', ndvi: 0.25, evi: 0.18, precip: 45, tmax: 29, tmin: 13 },

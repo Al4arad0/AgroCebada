@@ -37,7 +37,6 @@ export const Predictions: React.FC = () => {
       const p = targetParcels[i];
       let yieldVal = p.rendimientoOficial ?? p.rendimientoEnVivo;
 
-      // Si la parcela no tiene estimación previa o es manual (0.00), llamamos a la API real
       if (yieldVal === null || yieldVal === 0) {
         try {
           setLogs(prev => [...prev, `[PETICIÓN] Enviando ${p.name} al motor de IA...`]);
@@ -67,12 +66,12 @@ export const Predictions: React.FC = () => {
     }
     
     if (errors > 0) {
-      setLogs(prev => [...prev, `⚠️ Proceso finalizado con ${errors} errores de conexión.`]);
+      setLogs(prev => [...prev, `Proceso finalizado con ${errors} errores de conexión.`]);
     } else {
-      setLogs(prev => [...prev, '✅ Proceso de inferencia por lotes finalizado exitosamente.']);
+      setLogs(prev => [...prev, 'Proceso de inferencia por lotes finalizado exitosamente.']);
     }
     
-    await reload(); // Sincronizamos la base de datos con la tabla general
+    await reload(); 
     setIsExecuting(false);
     setHasRun(true);
   };

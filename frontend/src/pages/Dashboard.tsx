@@ -33,8 +33,6 @@ const ChartContainer: React.FC<ChartContainerProps> = ({ id, title, children, fu
 
 export const Dashboard: React.FC = () => {
   const [fullScreenChart, setFullScreenChart] = useState<string | null>(null);
-  
-  // FASE 3/4: Usamos el Hook Maestro en vez de fetch individuales.
   const { parcels, loading, error } = useParcelsData();
 
   const dashboardStats = useMemo(() => {
@@ -48,7 +46,6 @@ export const Dashboard: React.FC = () => {
     const zoneCount = { '0': 0, '1': 0, '2': 0 };
 
     parcels.forEach((p) => {
-      // Si la parcela no tiene área o es inventada/cero, evitamos sumarla
       const currentArea = isNaN(p.area) ? 0 : p.area;
       totalArea += currentArea;
 
@@ -56,7 +53,6 @@ export const Dashboard: React.FC = () => {
         stateAggregation[p.state] = { real: 0, estimada: 0 };
       }
 
-      // Separación estricta de Observado vs Estimado
       if (p.rendimientoObservado !== null) {
         sumObserved += p.rendimientoObservado;
         countObserved += 1;
@@ -67,7 +63,6 @@ export const Dashboard: React.FC = () => {
         stateAggregation[p.state].estimada += (p.mejorEstimacion * currentArea);
       }
 
-      // Acumulador de Zonas
       const zStr = String(p.zona);
       if (zStr === '0' || zStr === '1' || zStr === '2') {
         zoneCount[zStr as '0'|'1'|'2'] += 1;

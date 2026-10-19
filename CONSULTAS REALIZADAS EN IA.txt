@@ -1,29 +1,23 @@
-CONSULTAS REALIZADAS EN IA DURANTE EL DESARROLLO WEB
+"Estoy desplegando mi frontend (React/Vite) en Vercel y mi backend en Render. En local import.meta.env.VITE_API_URL funciona perfecto, pero en producción las peticiones fallan. ¿Cuáles son los errores más comunes al inyectar variables de entorno en Vercel y cómo evito que se concatenen mal las URLs?"
 
-Actúa como un arquitecto de software senior, desarrollador Full Stack, ingeniero de datos, especialista en Machine Learning, desarrollo de aplicaciones web y UX/UI.
-Requiero que me ayudes a realizar la estructuración completa de carpetas y que me expliques la configuración completa previa a desarrollar para un proyecto donde las tecnologías a usar en Frontend son:
-React.
-TypeScript.
-Vite.
-Tailwind CSS.
-React Router.
-Lucide React.
-Recharts o Apache ECharts.
-React Leaflet + Leaflet para mapas.
-Utilizar componentes reutilizables.
+"Al hacer un fetch desde mi frontend hacia mi API en Node.js hospedada en Render, estoy recibiendo un error '308 Permanent Redirect' seguido de un 404. Tengo entendido que Express es estricto con las barras diagonales (trailing slashes). ¿Cómo configuro las rutas para evitar esto?"
 
-Y en el backend son:
-Node.js.
-TypeScript.
-Fastify o Express.
-REST API.
-La API debe abstraer el acceso a datos.
-El frontend no debe acceder directamente a PostgreSQL.
+"Estoy migrando mi base de datos de localhost a Neon Tech. Ya tengo mi 'Connection String', pero quiero asegurarme de que la conexión a través de Drizzle ORM sea segura en producción. ¿Debo agregar algún parámetro de SSL (sslmode=require) en la configuración de la cadena?"
 
-Para la manipulación de la base de datos considera el posible uso de tecnologías como:
-PostgreSQL.
-PostGIS.
-IMPORTANTE:
-El esquema definitivo todavía NO se conoce, lo trabajaré en el proceso, únicamente requiero de tu apoyo para construir una buena estructura de carpetas y sugerencias para la elaboración de la aplicación web progresiva.
+"Tengo un microservicio en Python (FastAPI) para mi motor de Machine Learning y un backend central en Node.js. ¿Cuál es la forma más eficiente y limpia de hacer una petición POST desde Express hacia FastAPI usando fetch nativo, manejando el timeout para que Node no se quede colgado si Python tarda en responder?"
 
-El proyecto está basado en agricultura y en la creación de un modelo capaz de estimar la producción de parcelas de cebada, en base a eso, constrúyeme una paleta de colores completa y sugiéreme estilos de componentes de la interfaz gráfica para hacer de mi aplicación, una aplicación visualmente atractiva.
+"En mi API de FastAPI, si el archivo .joblib del modelo no se encuentra al arrancar, el servidor crashea y Render no lo levanta. ¿Cómo puedo envolver la carga del modelo con un bloque try/except para que el servidor inicie de todos modos y solo devuelva un 'Error 503' cuando intenten consumir el endpoint /predict?"
+
+"Quiero crear un endpoint en Express para inyectar datos históricos a mi base de datos, pero no quiero que esté abierto al público. ¿Me das un ejemplo rápido de un middleware sencillo en Node.js que verifique un token tipo 'Bearer' en los Headers antes de ejecutar el controlador?"
+
+"Necesito poblar mi base de datos leyendo un archivo predicciones_final.csv. ¿Qué librería en Node.js me recomiendas que sea rápida y consuma poca memoria para parsear un CSV y cómo lo itero para hacer un bulk insert o transacciones con Drizzle ORM?"
+
+"Estoy configurando un script de 'seed' para mi entorno de desarrollo. ¿Cuál es la mejor práctica para que Node.js detecte si una tabla (por ejemplo, parcels) está vacía al encender el servidor y, de ser así, lea un archivo local y la llene automáticamente?"
+
+"Estoy usando Drizzle ORM con PostgreSQL. Si intento insertar una parcela que ya existe, la base de datos lanza un error por duplicidad de ID. ¿Cómo es la sintaxis correcta para hacer un 'onConflictDoUpdate' que simplemente actualice el rendimiento si la parcela ya está registrada?"
+
+"En React, tengo una vista de 'Modelos' donde quiero colocar tarjetas informativas comparando Ridge Regressor, LightGBM y Gaussian Process. ¿Me pasas una estructura de clases de Tailwind CSS rápida para armar un grid responsivo (1 columna en móvil, 3 en escritorio) con tarjetas que tengan bordes suaves y un ícono en la cabecera?"
+
+"Estoy creando un archivo api.ts para centralizar todas mis peticiones al backend. Quiero hacer una función handleResponse genérica que intercepte cualquier error HTTP (ej. 400 o 500), extraiga el mensaje de error del JSON del servidor y lance un throw new Error() limpio para que los componentes lo atrapen. ¿Cómo lo estructurarías?"
+
+"Si mi API me devuelve un campo zonaAsignada: false, quiero mostrar una advertencia en la interfaz debajo del resultado. ¿Cuál es la forma más limpia en React de manejar esa alerta flotante usando el estado sin recargar la pantalla?"

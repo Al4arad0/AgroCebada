@@ -5,7 +5,7 @@ import { HelpCircle } from 'lucide-react';
 interface InfoTooltipProps {
   title: string;
   description: string;
-  align?: 'center' | 'left' | 'right'; // Mantenemos la prop por retrocompatibilidad, aunque shift() ya hace el trabajo
+  align?: 'center' | 'left' | 'right';
 }
 
 export const InfoTooltip: React.FC<InfoTooltipProps> = ({ title, description }) => {
@@ -17,9 +17,9 @@ export const InfoTooltip: React.FC<InfoTooltipProps> = ({ title, description }) 
     placement: 'top',
     whileElementsMounted: autoUpdate,
     middleware: [
-      offset(8), // Distancia de 8px entre el ícono y el globo
-      flip(),    // Si no cabe arriba, lo voltea hacia abajo
-      shift({ padding: 10 }), // Evita que se salga por los lados de la pantalla
+      offset(8), 
+      flip(),   
+      shift({ padding: 10 }),
     ],
   });
 

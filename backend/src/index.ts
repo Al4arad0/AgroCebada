@@ -5,9 +5,8 @@ import { db } from './db/index.js';
 import { sql } from 'drizzle-orm';
 import express, { Request, Response } from 'express';
 
-// Importación de routers
+
 import parcelRoutes from './routes/parcel.routes.js';
-// Asegúrate de exportar correctamente mlRoutes e importRoutes en sus respectivos archivos
 import mlRoutes from './routes/ml.routes.js'; 
 import importRoutes from './routes/import.routes.js';
 
@@ -23,7 +22,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// 1. Health check con validación real de DB
 app.get('/api/health', async (req: Request, res: Response) => {
   try {
     await db.execute(sql`SELECT 1`);
@@ -33,7 +31,6 @@ app.get('/api/health', async (req: Request, res: Response) => {
   }
 });
 
-// 2. Puente seguro para parámetros geográficos (evita llamadas directas del frontend a Python)
 app.get('/api/models/geoparams', async (req: Request, res: Response) => {
   try {
     const controller = new AbortController();
@@ -49,7 +46,6 @@ app.get('/api/models/geoparams', async (req: Request, res: Response) => {
   }
 });
 
-// Montaje de Routers
 app.use('/api/parcels', parcelRoutes);
 app.use('/api/models', mlRoutes);
 app.use('/api/import', importRoutes);

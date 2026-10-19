@@ -3,14 +3,14 @@ import { relations } from 'drizzle-orm';
 
 export const parcels = pgTable('parcels', {
   id: uuid('id').defaultRandom().primaryKey(),
-  name: text('name').notNull().unique(), // <-- Restricción única requerida
+  name: text('name').notNull().unique(), //Restricción única requerida
   state: text('state').notNull(),
   municipality: text('municipality'),
   latitude: doublePrecision('latitude').notNull(),
   longitude: doublePrecision('longitude').notNull(),
   area: doublePrecision('area'),
-  elevation_m: doublePrecision('elevation_m'), // <-- Movido a tabla principal
-  slope_deg: doublePrecision('slope_deg'),     // <-- Movido a tabla principal
+  elevation_m: doublePrecision('elevation_m'), 
+  slope_deg: doublePrecision('slope_deg'),     
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().$onUpdate(() => new Date()).notNull(),
 });
@@ -34,12 +34,12 @@ export const predictions = pgTable('predictions', {
   unit: text('unit').default('t/ha').notNull(),
   modelId: text('model_id').notNull(),
   modelVersion: text('model_version').notNull(),
-  featuresSnapshot: jsonb('features_snapshot'), // <-- Guarda qué variables usó el modelo en vivo
+  featuresSnapshot: jsonb('features_snapshot'), //Guarda qué variables usó el modelo en vivo
   lowerBound: doublePrecision('lower_bound'),
   upperBound: doublePrecision('upper_bound'),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 }, (table) => ({
-  // <-- Índice único para permitir UPSERT y evitar duplicados de un mismo modelo en una parcela
+  //Índice único para permitir UPSERT y evitar duplicados de un mismo modelo en una parcela
   parcelModelUnqIdx: uniqueIndex('parcel_model_unq_idx').on(table.parcelId, table.modelId)
 }));
 

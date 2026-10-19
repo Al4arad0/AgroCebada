@@ -6,7 +6,7 @@ dotenv.config();
 
 const runClear = async () => {
   if (process.env.NODE_ENV === 'production') {
-    console.error("❌ ERROR: No puedes purgar la base de datos en el entorno de producción.");
+    console.error("ERROR: No puedes purgar la base de datos en el entorno de producción.");
     process.exit(1);
   }
 
@@ -15,10 +15,10 @@ const runClear = async () => {
     await db.delete(predictions);
     await db.delete(observations);
     await db.delete(parcels);
-    console.log("✅ Tablas limpiadas correctamente.");
+    console.log("Tablas limpiadas correctamente.");
     process.exit(0);
   } catch (error) {
-    console.error("❌ Error al limpiar la BD:", error);
+    console.error("Error al limpiar la BD:", error);
     process.exit(1);
   }
 };

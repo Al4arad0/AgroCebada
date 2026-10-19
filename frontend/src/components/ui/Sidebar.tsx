@@ -21,7 +21,6 @@ export const Sidebar: React.FC = () => {
 
   return (
     <>
-      {/* Botón flotante para móvil */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="md:hidden fixed top-4 left-4 z-50 p-2 bg-green-900 text-white rounded-lg shadow-md"
@@ -29,7 +28,6 @@ export const Sidebar: React.FC = () => {
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Overlay oscuro en móvil */}
       {isOpen && (
         <div 
           className="md:hidden fixed inset-0 bg-black/60 z-30 transition-opacity"
@@ -37,11 +35,10 @@ export const Sidebar: React.FC = () => {
         />
       )}
 
-      {/* Barra lateral */}
       <aside className={`w-64 h-screen bg-green-900 text-white flex flex-col fixed left-0 top-0 z-40 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
         <div className="p-6 md:mt-0 mt-14">
-          <h1 className="text-2xl font-bold tracking-tight text-yellow-400">AgroCebada ML</h1>
-          <p className="text-xs text-green-400 mt-1">Plataforma de Predicción</p>
+          <h1 className="text-2xl font-bold tracking-tight text-yellow-400">AgroCebada</h1>
+          <p className="text-xs text-green-400 mt-1">Plataforma de Predicción. Cebadines</p>
         </div>
         
         <nav className="flex-1 px-4 space-y-2 mt-2 overflow-y-auto">

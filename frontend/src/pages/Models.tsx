@@ -77,7 +77,6 @@ export const Models: React.FC = () => {
         </div>
       </div>
 
-      {/* NUEVO APARTADO: Análisis Comparativo de Modelos Evaluados */}
       <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
         <h2 className="text-lg font-bold flex items-center gap-2 text-gray-900 border-b pb-3 mb-4">
           <Cpu size={20} className="text-indigo-600"/> Análisis Comparativo de Algoritmos Evaluados
@@ -87,7 +86,6 @@ export const Models: React.FC = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           
-          {/* Tarjeta 1: Ridge Regressor */}
           <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-blue-800 font-bold mb-2">
@@ -103,7 +101,6 @@ export const Models: React.FC = () => {
             </div>
           </div>
 
-          {/* Tarjeta 2: Gaussian Process Regressor */}
           <div className="bg-purple-50/50 border border-purple-100 p-4 rounded-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-purple-800 font-bold mb-2">
@@ -119,7 +116,6 @@ export const Models: React.FC = () => {
             </div>
           </div>
 
-          {/* Tarjeta 3: LightGBM */}
           <div className="bg-rose-50/50 border border-rose-100 p-4 rounded-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-rose-800 font-bold mb-2">

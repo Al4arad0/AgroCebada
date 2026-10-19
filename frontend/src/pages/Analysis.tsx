@@ -4,7 +4,6 @@ import { Mountain, Scale, Satellite, Compass, AlertCircle, Info } from 'lucide-r
 import { useParcelsData } from '../hooks/useParcelsData';
 import { InfoTooltip } from '../components/ui/InfoToolTip';
 
-// Perfil fenológico representativo de Sentinel-2 para el ciclo 2025 (Suavizado gaussiano BW=10d)
 const FENOLOGIA_CURVA = [
   { dia: 'Abr 01', doy: 91, ndvi: 0.18, fase: 'Siembra / Emergencia' },
   { dia: 'May 06', doy: 126, ndvi: 0.28, fase: 'Macollamiento' },
@@ -15,7 +14,6 @@ const FENOLOGIA_CURVA = [
   { dia: 'Oct 28', doy: 301, ndvi: 0.22, fase: 'Cosecha' },
 ];
 
-// Tooltip personalizado para la gráfica de dispersión
 const CustomScatterTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;

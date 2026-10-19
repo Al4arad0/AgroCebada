@@ -28,7 +28,6 @@ export const Parcels: React.FC = () => {
     
     try {
       setPredicting(true);
-      // Solo calcula para las que no son oficiales, no tienen polígono (fueron agregadas a mano) y no tienen rendimiento observado
       const parcelsToPredict = safeList.filter(p => 
         p.rendimientoObservado === null && 
         p.rendimientoOficial === null && 

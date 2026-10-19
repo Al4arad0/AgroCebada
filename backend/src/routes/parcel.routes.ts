@@ -9,17 +9,15 @@ const router = Router();
 router.post('/', createParcel);
 router.get('/', getParcels);
 
-// Integración de la eliminación en cascada de parcelas
-// Integración de la eliminación en cascada de parcelas
 router.delete('/:id', async (req: Request, res: Response): Promise<any> => {
   try {
     const { id } = req.params;
     
-    // 1. Borramos dependencias en cascada (Predicciones y Observaciones)
+    //
     await db.delete(predictions).where(eq(predictions.parcelId, String(id)));
     await db.delete(observations).where(eq(observations.parcelId, String(id)));
     
-    // 2. Borramos la parcela principal y retornamos el registro eliminado (con String(id))
+    
     const deletedParcel = await db.delete(parcels)
       .where(eq(parcels.id, String(id)))
       .returning();

@@ -24,7 +24,6 @@ export const mlService = {
     });
     return handleResponse(response);
   },
-  // FASE 3: Petición indirecta a Python a través del Backend
   async getGeoParams() {
     const response = await fetch(`${API_BASE_URL}/models/geoparams`);
     return handleResponse(response);

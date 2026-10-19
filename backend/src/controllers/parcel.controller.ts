@@ -9,12 +9,10 @@ export const createParcel = async (req: Request, res: Response) => {
   try {
     const { name, state, municipality, latitude, longitude, area, topo_elevacion, topo_pendiente } = req.body;
     
-    // Validación de entrada
     if (!name || isNaN(parseFloat(latitude)) || isNaN(parseFloat(longitude)) || parseFloat(area) <= 0) {
       return res.status(400).json({ error: 'Datos inválidos. Verifica nombre, coordenadas o área.' });
     }
 
-    // Usamos una Transacción para asegurar atomicidad
     const result = await db.transaction(async (tx) => {
       const newParcel = await tx.insert(parcels).values({
         name: name.trim(),
@@ -42,7 +40,6 @@ export const createParcel = async (req: Request, res: Response) => {
       return newParcel[0];
     });
 
-    // Petición a Python fuera de la transacción
     let warning = null;
     let savedPrediction = null;
 
@@ -71,7 +68,6 @@ export const createParcel = async (req: Request, res: Response) => {
 
         const predYield = parseFloat(data.predictedYield);
         if (!isNaN(predYield) && predYield > 0) {
-          // Upsert en caso de existir
           const inserted = await db.insert(predictions).values({
             parcelId: result.id,
             predictedYield: predYield,
