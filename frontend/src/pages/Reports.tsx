@@ -59,7 +59,7 @@ export const Reports: React.FC = () => {
           <div>
             <div className="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center mb-4"><CheckCircle2 size={24} /></div>
             <h3 className="font-bold text-gray-900 flex items-center">
-              CSV Oficial del Reto
+              CSV de Predicciones
               <InfoTooltip title="Entregable FIRA" description="Formato estricto para someter a evaluación. Contiene solo las 59 parcelas objetivo con 2 columnas: ID_POLIGONO y RENDIMIENTO_PRED_T_HA." />
             </h3>
             <p className="text-xs text-gray-500 mt-2">Exporta estrictamente las 59 parcelas del conjunto de predicción con sus rendimientos pre-calculados (t/ha).</p>
