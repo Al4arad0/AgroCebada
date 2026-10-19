@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { Maximize2, Minimize2, Map as MapIcon, TrendingUp, Tractor, Loader2 } from 'lucide-react';
 import { useParcelsData } from '../hooks/useParcelsData';
-import { InfoTooltip } from '../components/ui/InfoTooltip';
+import { InfoTooltip } from '../components/ui/InfoToolTip';
 
 const COLORS = ['#16a34a', '#eab308', '#ef4444'];
 
@@ -184,8 +184,8 @@ export const Dashboard: React.FC = () => {
           {dashboardStats.zoneData.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
-                <Pie data={dashboardStats.zoneData} cx="50%" cy="50%" innerRadius={80} outerRadius={120} paddingAngle={5} dataKey="value" label={({name, percent}) => `${name} (${(percent * 100).toFixed(0)}%)`}>
-                  {dashboardStats.zoneData.map((entry, index) => (
+                <Pie data={dashboardStats.zoneData} cx="50%" cy="50%" innerRadius={80} outerRadius={120} paddingAngle={5} dataKey="value" label={({name, percent}) => `${name} (${((percent||0) * 100).toFixed(0)}%)`}>
+                  {dashboardStats.zoneData.map((_entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>

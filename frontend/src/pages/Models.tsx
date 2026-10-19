@@ -1,7 +1,7 @@
 import React from 'react';
-import { Brain, FileCode, ServerCrash, CheckCircle2, FlaskConical, Microscope } from 'lucide-react';
+import { Brain, ServerCrash, FlaskConical, Microscope } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { InfoTooltip } from '../components/ui/InfoTooltip';
+import { InfoTooltip } from '../components/ui/InfoToolTip';
 
 export const Models: React.FC = () => {
   const mallaResultados = [
