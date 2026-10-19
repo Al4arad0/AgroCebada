@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Settings as SettingsIcon, Ruler, Sliders, Database, User, 
+  Settings as Ruler, Sliders, Database, User, 
   Save, ShieldCheck, Loader2 
 } from 'lucide-react';
 

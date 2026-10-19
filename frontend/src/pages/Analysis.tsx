@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { ResponsiveContainer, ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, BarChart, Bar, LineChart, Line, Legend } from 'recharts';
 import { Mountain, Scale, Satellite, Compass, AlertCircle, Info } from 'lucide-react';
 import { useParcelsData } from '../hooks/useParcelsData';
-import { InfoTooltip } from '../components/ui/InfoTooltip';
+import { InfoTooltip } from '../components/ui/InfoToolTip';
 
 // Perfil fenológico representativo de Sentinel-2 para el ciclo 2025 (Suavizado gaussiano BW=10d)
 const FENOLOGIA_CURVA = [

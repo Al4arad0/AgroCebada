@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { BrainCircuit, Loader2, Search, CheckCircle2, Clock, Plus, X, AlertTriangle } from 'lucide-react';
 import { parcelService, mlService } from '../services/api';
-import { MapView } from '../components/maps/MapView';
+import { MapView } from '../components/maps/mapView';
 import { useParcelsData } from '../hooks/useParcelsData';
-import { InfoTooltip } from '../components/ui/InfoTooltip';
+import { InfoTooltip } from '../components/ui/InfoToolTip';
 
 export const Parcels: React.FC = () => {
   const { parcels = [], loading, error, reload } = useParcelsData();

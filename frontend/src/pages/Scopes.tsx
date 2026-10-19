@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldAlert, Info, Database, Map as MapIcon } from 'lucide-react';
-import { InfoTooltip } from '../components/ui/InfoTooltip';
+import { InfoTooltip } from '../components/ui/InfoToolTip';
 
 export const Scopes: React.FC = () => {
   return (

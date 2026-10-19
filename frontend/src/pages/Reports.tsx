@@ -1,7 +1,7 @@
 import React from 'react';
 import { Download, FileText, Map as MapIcon, Loader2, CheckCircle2 } from 'lucide-react';
 import { useParcelsData } from '../hooks/useParcelsData';
-import { InfoTooltip } from '../components/ui/InfoTooltip';
+import { InfoTooltip } from '../components/ui/InfoToolTip';
 
 export const Reports: React.FC = () => {
   const { parcels, loading, error } = useParcelsData();

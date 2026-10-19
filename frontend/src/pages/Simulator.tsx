@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { Sliders, RefreshCw, Mountain, Activity, CheckCircle2 } from 'lucide-react';
+import { Sliders, RefreshCw, Activity, CheckCircle2 } from 'lucide-react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ReferenceLine } from 'recharts';
-import { InfoTooltip } from '../components/ui/InfoTooltip';
+import { InfoTooltip } from '../components/ui/InfoToolTip';
 
 const BASE_GEO_PARAMS = {
   medias_yield: { '0': 4.488966, '1': 3.033333, '2': 3.071429 },
