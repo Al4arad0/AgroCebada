@@ -83,14 +83,14 @@ cd frontend
 npm install
 npm run dev
 
-##📦 Flujo de Carga de Datos (Producción)
+###📦 Flujo de Carga de Datos (Producción)
 Dado que la base de datos de Neon inicia en blanco, el flujo de carga histórica en producción requiere autenticación de administrador:
 
 1. Subir el archivo de parcelas maestro (ID_area_rendimiento...csv) desde la interfaz web o mediante el endpoint /api/import/csv enviando el ADMIN_TOKEN en la cabecera Authorization.
 
 2. Sincronizar las predicciones oficiales disparando un POST al endpoint /api/import/final-predictions (esto leerá los CSV locales alojados en Render y poblará las tablas de observaciones).
 
-##🧠 Documentación de Modelos
+###🧠 Documentación de Modelos
 El sistema evaluó más de 30 configuraciones con algoritmos como LightGBM, Gaussian Process y Ridge Regressor utilizando datos de telemetría PlanetScope y Sentinel-2.
 
 El modelo ganador implementado en producción (Ridge Topo V3) descartó la telemetría óptica en favor de variables topográficas precisas (elevación y pendiente) combinadas con clustering zonal, previniendo el sobreajuste provocado por los errores de estimación "a ojo" en las mediciones de campo tradicionales. Todo el análisis y las métricas (RMSE, MAE, R²) están documentados visualmente en la pestaña "Modelos y Experimentos" de la plataforma.
