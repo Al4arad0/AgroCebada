@@ -204,7 +204,7 @@ export const Parcels: React.FC = () => {
                       ) : item.rendimientoOficial !== null ? (
                         <div className="flex flex-col items-end">
                            <span className="text-purple-700 bg-purple-50 px-1 py-0.5 rounded border border-purple-200">{item.rendimientoOficial.toFixed(2)}</span>
-                           <span className="text-[9px] text-gray-400 font-normal uppercase">Oficial</span>
+                           <span className="text-[9px] text-gray-400 font-normal uppercase">Generado con modelo</span>
                         </div>
                       ) : item.rendimientoEnVivo !== null ? (
                         <div className="flex flex-col items-end">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, ServerCrash, FlaskConical, Microscope } from 'lucide-react';
+import { Brain, ServerCrash, FlaskConical, Microscope, Cpu, LineChart, GitBranch } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { InfoTooltip } from '../components/ui/InfoToolTip';
 
@@ -74,6 +74,67 @@ export const Models: React.FC = () => {
               <InfoTooltip title="Residual" description="La IA no predice el rendimiento total desde cero; predice cuánto se desvía el rendimiento de la parcela respecto al promedio de su zona." />
             </li>
           </ul>
+        </div>
+      </div>
+
+      {/* NUEVO APARTADO: Análisis Comparativo de Modelos Evaluados */}
+      <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+        <h2 className="text-lg font-bold flex items-center gap-2 text-gray-900 border-b pb-3 mb-4">
+          <Cpu size={20} className="text-indigo-600"/> Análisis Comparativo de Algoritmos Evaluados
+        </h2>
+        <p className="text-sm text-gray-600 mb-6">
+          Durante la fase de experimentación y validación cruzada, se contrastaron tres familias de algoritmos con naturalezas matemáticas muy distintas para predecir el rendimiento agrícola:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          {/* Tarjeta 1: Ridge Regressor */}
+          <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-xl flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-blue-800 font-bold mb-2">
+                <LineChart size={18} className="text-blue-600" />
+                <h3>Ridge Regressor</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">
+                Modelo lineal con regularización L2. Controla la complejidad penalizando pesos excesivos, lo que previene el sobreajuste ante variaciones ruidosas o datos atípicos de campo.
+              </p>
+            </div>
+            <div className="bg-white p-2.5 rounded-lg border border-blue-100 text-[11px] text-blue-900 font-medium">
+              <span className="font-bold">Rol en el proyecto:</span> Ganador absoluto. Estabilizó la estimación al combinarse con el análisis topográfico y espacial.
+            </div>
+          </div>
+
+          {/* Tarjeta 2: Gaussian Process Regressor */}
+          <div className="bg-purple-50/50 border border-purple-100 p-4 rounded-xl flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-purple-800 font-bold mb-2">
+                <Brain size={18} className="text-purple-600" />
+                <h3>Gaussian Process</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">
+                Modelo no paramétrico basado en distribuciones de probabilidad y funciones de covarianza (Kernel). Excelente para modelar relaciones espaciales fluidas, aunque computacionalmente costoso.
+              </p>
+            </div>
+            <div className="bg-white p-2.5 rounded-lg border border-purple-100 text-[11px] text-purple-900 font-medium">
+              <span className="font-bold">Rol en el proyecto:</span> Evaluado junto a telemetría PlanetScope y clima, mostró alta sensibilidad ante errores de captura humana.
+            </div>
+          </div>
+
+          {/* Tarjeta 3: LightGBM */}
+          <div className="bg-rose-50/50 border border-rose-100 p-4 rounded-xl flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-rose-800 font-bold mb-2">
+                <GitBranch size={18} className="text-rose-600" />
+                <h3>LightGBM</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">
+                Algoritmo de árboles de decisión potenciados por gradiente (Gradient Boosting). Muy potente para capturar interacciones no lineales complejas entre variables satelitales.
+              </p>
+            </div>
+            <div className="bg-white p-2.5 rounded-lg border border-rose-100 text-[11px] text-rose-900 font-medium">
+              <span className="font-bold">Rol en el proyecto:</span> Sobreajustó debido a los redondeos y estimaciones "a ojo" presentes en las básculas de campo tradicionales.
+            </div>
+          </div>
+
         </div>
       </div>
 
