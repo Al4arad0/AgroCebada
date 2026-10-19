@@ -65,7 +65,7 @@ export const createParcel = async (req: Request, res: Response) => {
       if (pythonResponse.ok) {
         const data = await pythonResponse.json();
         
-        if (data.zonaAsignada === False) {
+        if (data.zonaAsignada === false) {
           warning = data.advertencia;
         }
 
