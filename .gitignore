@@ -1,0 +1,49 @@
+# ----------------------------------------------------------------------
+# 1. Dependencias y compilados de Node.js (Frontend y Backend)
+# ----------------------------------------------------------------------
+node_modules/
+dist/
+dist-ssr/
+.vite/
+.vite-temp/
+
+# ----------------------------------------------------------------------
+# 2. Entorno y Caché de Python (Motor ML)
+# ----------------------------------------------------------------------
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ipynb_checkpoints/
+ml/notebooks/
+
+# ----------------------------------------------------------------------
+# 3. Variables de entorno y secretos (¡CRÍTICO!)
+# ----------------------------------------------------------------------
+.env
+.env.*
+*.local
+
+# ----------------------------------------------------------------------
+# 4. Logs de sistema y configuración de editores
+# ----------------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+# ----------------------------------------------------------------------
+# 5. Archivos multimedia, de análisis y documentos locales del reto
+# ----------------------------------------------------------------------
+*.png
+*.jpg
+*.docx
+*.ipynb
+resultados_malla*.csv
+ID_area_rendimiento_70_30_Reto_AgroCebada.csv
+predicciones_baseline_zona2.csv

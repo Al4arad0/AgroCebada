@@ -1,0 +1,29 @@
+CONSULTAS REALIZADAS EN IA DURANTE EL DESARROLLO WEB
+
+Actúa como un arquitecto de software senior, desarrollador Full Stack, ingeniero de datos, especialista en Machine Learning, desarrollo de aplicaciones web y UX/UI.
+Requiero que me ayudes a realizar la estructuración completa de carpetas y que me expliques la configuración completa previa a desarrollar para un proyecto donde las tecnologías a usar en Frontend son:
+React.
+TypeScript.
+Vite.
+Tailwind CSS.
+React Router.
+Lucide React.
+Recharts o Apache ECharts.
+React Leaflet + Leaflet para mapas.
+Utilizar componentes reutilizables.
+
+Y en el backend son:
+Node.js.
+TypeScript.
+Fastify o Express.
+REST API.
+La API debe abstraer el acceso a datos.
+El frontend no debe acceder directamente a PostgreSQL.
+
+Para la manipulación de la base de datos considera el posible uso de tecnologías como:
+PostgreSQL.
+PostGIS.
+IMPORTANTE:
+El esquema definitivo todavía NO se conoce, lo trabajaré en el proceso, únicamente requiero de tu apoyo para construir una buena estructura de carpetas y sugerencias para la elaboración de la aplicación web progresiva.
+
+El proyecto está basado en agricultura y en la creación de un modelo capaz de estimar la producción de parcelas de cebada, en base a eso, constrúyeme una paleta de colores completa y sugiéreme estilos de componentes de la interfaz gráfica para hacer de mi aplicación, una aplicación visualmente atractiva.

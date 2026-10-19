@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta de colores AgroCebada */
+  --color-agricola-light: #4ade80;
+  --color-agricola: #16a34a;
+  --color-agricola-dark: #14532d;
+  --color-olive: #4d7c0f;
+  --color-earth-light: #fefce8;
+  --color-earth: #eab308;
+  --color-surface: #ffffff;
+  --color-surface-dim: #f3f4f6;
+  
+  /* Fuentes */
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-surface-dim);
+}
