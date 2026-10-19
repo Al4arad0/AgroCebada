@@ -16,7 +16,7 @@ export const predictYield = async (req: Request, res: Response): Promise<any> =>
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    const timeoutId = setTimeout(() => controller.abort(), 30000);
 
     const pythonResponse = await fetch(`${ML_URL}/predict`, {
       method: 'POST',

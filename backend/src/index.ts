@@ -34,7 +34,7 @@ app.get('/api/health', async (req: Request, res: Response) => {
 app.get('/api/models/geoparams', async (req: Request, res: Response) => {
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    const timeoutId = setTimeout(() => controller.abort(), 30000);
     const pyRes = await fetch(`${ML_URL}/geoparams`, { signal: controller.signal });
     clearTimeout(timeoutId);
     
