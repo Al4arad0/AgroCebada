@@ -43,7 +43,7 @@ app.get('/api/models/geoparams', async (req: Request, res: Response) => {
     
     if (!pyRes.ok) throw new Error('Error en ML API');
     const data = await pyRes.json();
-    Response.json(data);
+    return res.json(data);
   } catch (error) {
     res.status(502).json({ error: 'Servicio de ML no disponible.' });
   }
